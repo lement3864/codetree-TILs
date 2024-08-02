@@ -7,7 +7,13 @@ int main() {
 
     cin >> mathA >> engA >> mathB >> engB;
 
-    cout << (mathA > mathB) && (engA > engB);
-
+    if (mathA > mathB && engA > engB)
+    {
+        cout << 1;
+    }
+    else
+    {
+        cout << 0;
+    }
     return 0;
 }
