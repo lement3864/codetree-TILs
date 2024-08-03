@@ -13,13 +13,27 @@ int main() {
     }
     else
     {
-        if (n % 2 == 0)
+        if (n <= 7)
         {
-            cout << 30;
+            if (n % 2 == 0)
+            {
+                cout << 30;
+            }
+            else
+            {
+                cout << 31;
+            }
         }
         else
         {
-            cout << 31;
+            if (n % 2 == 0)
+            {
+                cout << 31;
+            }
+            else
+            {
+                cout << 30;
+            }
         }
     }
 
