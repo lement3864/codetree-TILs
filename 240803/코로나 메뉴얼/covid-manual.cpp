@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     
-    int temp, A;
+    int temp, A = 0;
 
     char cold;
 
@@ -14,6 +14,7 @@ int main() {
         if (cold == 'Y' && temp >= 37)
         {
             A++;
+            // cout << "check" << "\n";
         }
     }
 
