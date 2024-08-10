@@ -9,6 +9,12 @@ int main() {
 
     while (true)
     {
+        if (N == 1)
+        {
+            cout << cnt;
+            break;
+        }
+        
         if (N % 2 == 0)
         {
             N /= 2;
@@ -20,11 +26,6 @@ int main() {
             cnt++;
         }
 
-        if (N == 1)
-        {
-            cout << cnt;
-            break;
-        }
 
     }
 
