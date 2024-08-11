@@ -11,7 +11,7 @@ int main() {
     {
         for (int j = 0; j < n; ++j)
         {
-            if (i > 0 && j % 2 == 0)
+            if ((i > 0 && j % 2 == 0) || i - 1 >= j)
             {
                 cout << "  ";
             }
@@ -20,6 +20,8 @@ int main() {
                 cout << "* ";
             }
         }
+
+        cout << endl;
     }
 
     return 0;
