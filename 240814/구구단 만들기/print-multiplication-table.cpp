@@ -15,7 +15,7 @@ int main() {
             {
                 cout << j << " * " << i << " = " << j * i;
 
-                if (j != 2)
+                if (j != a)
                     cout << " / ";
             }
         }
