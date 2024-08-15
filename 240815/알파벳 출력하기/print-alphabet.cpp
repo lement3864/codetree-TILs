@@ -11,10 +11,11 @@ int main() {
     {
         for (int j = 1; j <= i; ++j)
         {
+            cout << (char)cnt;
+
             if ((char)cnt == 'Z')
                 cnt = 65;
-
-            cout << (char)cnt;
+                
             cnt++;
         }
 
