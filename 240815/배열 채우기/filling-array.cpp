@@ -9,13 +9,13 @@ int main() {
     {
         cin >> arr[i];
 
-        cnt++;
-
         if (arr[i] == 0)
             break;
+            
+        cnt++;
     }
 
-    for (int i = 9; i >= 0; --i)
+    for (int i = cnt - 1; i >= 0; --i)
     {
         cout << arr[i] << " ";
     }
