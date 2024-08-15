@@ -11,6 +11,9 @@ int main() {
     {
         for (int j = 1; j <= i; ++j)
         {
+            if (cnt == 88)
+                cnt = 65;
+
             cout << (char)cnt;
             cnt++;
         }
