@@ -12,11 +12,11 @@ int main() {
 
     while (1)
     {
-        if (arr[i] > 100)
-            break;
-
         arr[i] = arr[i - 1] + arr[i - 2];
         i++;
+
+        if (arr[i] > 100)
+            break;
     }
 
     for (int j = 0; j < i; ++j)
