@@ -8,7 +8,7 @@ int main() {
 
     cin >> a >> b;
 
-    while (a >= 1)
+    while (a > 1)
     {
         temp = a / b;
  
