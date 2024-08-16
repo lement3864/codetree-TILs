@@ -15,7 +15,7 @@ int main() {
         arr[i] = arr[i - 1] + arr[i - 2];
         i++;
 
-        if (arr[i] > 100)
+        if (arr[i - 1] > 100)
             break;
     }
 
