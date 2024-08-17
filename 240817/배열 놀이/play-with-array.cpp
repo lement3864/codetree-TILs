@@ -17,40 +17,44 @@ int main() {
     // num3 = e
     for (int t = 0; t < q; ++t)
     {
-        cin >> num1;
-
-        if (num1 == 1 || num1 == 2)
-            cin >> num2;
-        else if (num1 == 3)
-            cin >> num2 >> num3;
+        cin >> num1 >> num2;
 
         // 질의 1
         if (num1 == 1)
         {
             cout << arr[num2 - 1] << endl;
         }
+
         // 질의 2
-        else if (num1 == 2)
+        if (num1 == 2)
         {
-            int idx = 0, temp = 101;
+            int idx, cnt = 0;
 
             for (int i = 0; i < n; ++i)
             {
-                if (arr[i] == num2 && temp >= arr[i])
+                if (arr[i] == num2)
                 {
-                    idx = i;
+                    cnt++;
+                    cout << i + 1 << endl;;   
+                    break;
                 }
             }
 
-            cout << idx + 1 << endl;;
+            if (cnt == 0)
+                cout << 0 << endl;
         }
+
         // 질의 3
-        else if (num1 == 3)
+        if (num1 == 3)
         {
+            cin >> num3;
+
             for (int i = num2 - 1; i < num3; ++i)
             {
                 cout << arr[i] << " ";
             }
+
+            cout << endl;
         }
     }
 
