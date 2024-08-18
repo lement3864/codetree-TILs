@@ -39,7 +39,6 @@ int main() {
 
         if (max_val <= check && count == false)
         {
-            cout << max_val;
             break;
         }
     }
@@ -48,6 +47,10 @@ int main() {
     {
         cout << -1;
     }
+    else if (max_val <= check && count == false)
+        {
+            cout << max_val;
+        }
 
     return 0;
 }
