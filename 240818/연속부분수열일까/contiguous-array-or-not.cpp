@@ -37,6 +37,9 @@ int main() {
                 break;
             }
         }
+
+        if (cnt == len_B)
+            break;
     }
 
     if (cnt == len_B)
