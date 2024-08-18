@@ -4,53 +4,35 @@ using namespace std;
 
 int main() {
     
-    int n;
-    int max_val = INT_MIN, check = INT_MAX;
-    bool count = false;
+    int n, max_val = -1;
 
     cin >> n;
 
     int arr[n];
 
     for (int i = 0; i < n; ++i)
-    {
         cin >> arr[i];
-    }
 
-    for (int t = 0; t < n; ++t)
+    for (int i = 0; i < n; ++i)
     {
-        count = false;
+        int temp = arr[i];
 
-        for (int i = 0; i < n; ++i)
+        if (max_val < temp)
         {
-            if (arr[i] == max_val)
+            int count = 0;
+
+            for (int j = 0; j < n; ++j)
             {
-                check = arr[i];
-                max_val = INT_MIN;
-                count = true;
-                break;
+                if (arr[j] == temp)
+                    count++;
             }
 
-            if (arr[i] < check && arr[i] >= max_val)
-            {
-                max_val = arr[i];
-            }
-        }
-
-        if (max_val <= check && count == false)
-        {
-            break;
+            if (count == 1)
+                max_val = temp;
         }
     }
 
-    if (count << true)
-    {
-        cout << -1;
-    }
-    else if (max_val <= check && count == false)
-        {
-            cout << max_val;
-        }
+    cout << max_val;
 
     return 0;
 }
