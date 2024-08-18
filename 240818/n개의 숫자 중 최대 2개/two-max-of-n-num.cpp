@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     
-    int n;
+    int n, check;
     int max_val = INT_MIN;
     int second_val = INT_MIN;
 
@@ -18,10 +18,19 @@ int main() {
         cin >> arr[i];
 
         if (arr[i] >= max_val)
+        {
             max_val = arr[i];
-        
-        if (arr[i] >= second_val && arr[i] < max_val)
+            check = i;
+        }
+    }
+
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (i != check && arr[i] >= second_val && arr[i] <= max_val)
+        {
             second_val = arr[i];
+        }
     }
 
     cout << max_val << " " << second_val;
