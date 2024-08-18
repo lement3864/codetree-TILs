@@ -6,6 +6,7 @@ int main() {
     
     int n;
     int max_val = INT_MIN, check = INT_MAX;
+    bool count = false;
 
     cin >> n;
 
@@ -18,7 +19,7 @@ int main() {
 
     for (int t = 0; t < n; ++t)
     {
-        bool count = false;
+        count = false;
 
         for (int i = 0; i < n; ++i)
         {
@@ -43,7 +44,7 @@ int main() {
         }
     }
 
-    if (max_val == INT_MIN)
+    if (count << true)
     {
         cout << -1;
     }
