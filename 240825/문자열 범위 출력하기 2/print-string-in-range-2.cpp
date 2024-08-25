@@ -10,10 +10,19 @@ int main() {
 
     cin >> str >> n;
 
-    
-    for (int i = str.length() - 1; i >= str.length() - n; --i)
+    if (str.length() >= n)
     {
-        cout << str[i];
+        for (int i = str.length() - 1; i >= str.length() - n; --i)
+        {
+            cout << str[i];
+        }
+    }
+    else
+    {
+        for (int i = str.length() - 1; i >= 0; --i)
+        {
+            cout << str[i];
+        }
     }
 
     return 0;
