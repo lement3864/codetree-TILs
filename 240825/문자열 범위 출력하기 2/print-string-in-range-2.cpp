@@ -10,7 +10,7 @@ int main() {
 
     cin >> str >> n;
 
-    if (str.length() >= n)
+    if (str.length() > n)
     {
         for (int i = str.length() - 1; i >= str.length() - n; --i)
         {
