@@ -10,7 +10,7 @@ int main() {
 
     for (int i = n - 1; i >= 0; --i)
     {
-        if (i % 2 != 0)
+        if (i % 2 == 0)
         {
             for (int j = n - 1; j >= 0; --j)
             {
