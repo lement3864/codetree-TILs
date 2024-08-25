@@ -21,9 +21,9 @@ int main() {
         }
         else
         {
-            for (int j = n; j >= 0; --j)
+            for (int j = n - 1; j >= 0; --j)
             {
-                arr[j][i] = num - 1;
+                arr[j][i] = num;
                 num++;
             }
         }
