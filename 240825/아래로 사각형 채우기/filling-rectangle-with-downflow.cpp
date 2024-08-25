@@ -3,17 +3,16 @@ using namespace std;
 
 int main() {
     
-    int n;
-
+    int n, num = 1;
+    int arr[10][10];
     cin >> n;
 
-    int arr[n][n] = {};
 
-    for (int i = 1; i <= n; ++i)
+    for (int i = 0; i <= n; ++i)
     {
         for (int j = 0; j < n; ++j)
         {
-            arr[i - 1][j] = i + n * j;
+            arr[j][i] = num++;
         }
     }
 
