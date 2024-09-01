@@ -7,7 +7,15 @@ int main() {
 
     cin >> alp;
 
-    cout << char(alp + 1);
+    if (alp == 'z')
+    {
+        alp = 'a';
+        cout << alp;
+    }
+    else
+    {
+        cout << char(alp + 1);
+    }
 
     return 0;
 }
