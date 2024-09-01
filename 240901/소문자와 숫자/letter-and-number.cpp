@@ -12,11 +12,11 @@ int main() {
 
     for (int i = 0; i < text.length(); ++i)
     {
-        if (isalpha(text[i]))
+        if ((text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= 'a' && text[i] <= 'z'))
         {
             cout << (char)tolower(text[i]);
         }
-        if (isdigit(text[i]))
+        if (text[i] >= '0' && text[i] <= '9')
         {
             cout << text[i];
         }
