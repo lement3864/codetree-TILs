@@ -9,7 +9,7 @@ int A[MAX_N], B[MAX_N];
 bool IsSame(int n) {
     for (int i = 0; i < n2; ++i)
     {
-        if (A[n + i] == B[i])
+        if (A[n + i] != B[i])
             return false;
     }
     return true;
