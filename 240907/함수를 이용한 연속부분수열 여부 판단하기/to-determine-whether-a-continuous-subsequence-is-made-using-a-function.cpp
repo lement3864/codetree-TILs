@@ -16,7 +16,7 @@ bool IsSame(int n) {
 }
 
 bool Check() {
-    for (int i = 0; i < n1 - n2; ++i)
+    for (int i = 0; i <= n1 - n2; ++i)
     {
         if (IsSame(i))
             return true;
