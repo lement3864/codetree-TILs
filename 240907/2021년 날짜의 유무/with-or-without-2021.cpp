@@ -21,6 +21,8 @@ bool Check(int m, int d) {
             return true;
         return false;        
     }
+
+    return false;
 }
 
 int main() {
