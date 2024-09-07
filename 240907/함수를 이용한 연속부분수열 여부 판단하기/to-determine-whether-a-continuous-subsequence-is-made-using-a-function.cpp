@@ -17,6 +17,8 @@ bool Check() {
                 return true;
         }
     }
+
+    return false;
 }
 
 int main() {
