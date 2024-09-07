@@ -16,6 +16,8 @@ bool Check() {
             else
                 return true;
         }
+
+        return true;
     }
 
     return false;
