@@ -6,18 +6,20 @@ using namespace std;
 int n1, n2;
 int A[MAX_N], B[MAX_N];
 
+bool IsSame(int n) {
+    for (int i = 0; i < n2; ++i)
+    {
+        if (A[n + i] == B[i])
+            return false;
+    }
+    return true;
+}
+
 bool Check() {
     for (int i = 0; i < n1 - n2; ++i)
     {
-        for (int j = 0; j < n2; ++j)
-        {
-            if (A[j + i] == B[j])
-                return false;
-            else
-                return true;
-        }
-
-        return true;
+        if (IsSame(i))
+            return true;
     }
 
     return false;
