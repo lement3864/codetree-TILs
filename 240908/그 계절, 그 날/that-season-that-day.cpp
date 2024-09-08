@@ -40,6 +40,8 @@ bool isPossible() {
             else
                 return false;
         }
+
+        return false;
     }
     else
     {
@@ -60,6 +62,8 @@ bool isPossible() {
             else
                 return false;
         }
+
+        return false;
     }
 }
 
