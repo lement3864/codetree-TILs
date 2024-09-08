@@ -25,8 +25,6 @@ bool isPossible() {
     {
         if (M == 2 && D <= 29)
             return true;
-        else
-            return false;
         
         if (M == 4 || M == 6 || M == 9 || M == 11)
         {
@@ -47,8 +45,6 @@ bool isPossible() {
     {
         if (M == 2 && D <= 28)
             return true;
-        else
-            return false;
         
         if (M == 4 || M == 6 || M == 9 || M == 11)
         {
