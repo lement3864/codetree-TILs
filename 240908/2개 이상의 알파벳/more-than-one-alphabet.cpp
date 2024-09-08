@@ -6,11 +6,15 @@ using namespace std;
 bool Check(string A) {
     for (int i = 0; i < A.length(); ++i)
     {
-        if(A[i] != A[i + 1])
-            return false;
-        
-        return true;
+        for (int j = i; j < A.length(); ++j)
+        {
+            if (A[i] != A[j])
+            {
+                return true;
+            }
+        }
     }
+    return false;
 }
 
 using namespace std;
