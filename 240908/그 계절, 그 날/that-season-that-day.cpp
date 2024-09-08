@@ -23,10 +23,12 @@ bool YoonYear() {
 bool isPossible() {
     if (YoonYear())
     {
-        if (M == 2 && D <= 29)
-            return true;
-        
-        if (M == 4 || M == 6 || M == 9 || M == 11)
+        if (M == 2)
+        {
+            if (D <= 29)
+                return true;
+        }
+        else if (M == 4 || M == 6 || M == 9 || M == 11)
         {
             if (D <= 30)
                 return true;
@@ -45,10 +47,12 @@ bool isPossible() {
     }
     else
     {
-        if (M == 2 && D <= 28)
-            return true;
-        
-        if (M == 4 || M == 6 || M == 9 || M == 11)
+        if (M == 2)
+        {
+            if (D <= 28)
+                return true;
+        }
+        else if (M == 4 || M == 6 || M == 9 || M == 11)
         {
             if (D <= 30)
                 return true;
