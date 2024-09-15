@@ -5,12 +5,13 @@ int arr[101];
 int maxNum = 0;
 
 int Func(int n) {
-    if (n == 0)
-        return maxNum;
 
     if (arr[n] >= maxNum)
         maxNum = arr[n];
 
+    if (n == 0)
+        return maxNum;
+        
     return Func(n - 1);
 }
 
