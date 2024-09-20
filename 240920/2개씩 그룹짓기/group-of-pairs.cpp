@@ -13,10 +13,12 @@ int main() {
         cin >> arr[i];
     
     sort(arr, arr + 2 * N);
+    // for(int i = 0; i < 2 * N; ++i)
+    //     cout << arr[i] << " ";
 
     for(int i = 0; i < N; ++i) {
-        if(arr[i] + arr[2 * N - i] >= maxSum) {
-            maxSum = arr[i] + arr[2 * N - i];
+        if(arr[i] + arr[2 * N - 1 - i] >= maxSum) {
+            maxSum = arr[i] + arr[2 * N -1 - i];
         }
     }
 
