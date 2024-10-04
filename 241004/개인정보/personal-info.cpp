@@ -41,6 +41,9 @@ int main() {
         infos[i] = Info(name, height, weight);
     }
 
+    cout << fixed;
+    cout.precision(1);
+
     sort(infos, infos + 5, compareName);
     cout << "name" << endl;
     for (int i = 0; i < 5; ++i) {
