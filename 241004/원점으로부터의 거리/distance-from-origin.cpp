@@ -18,6 +18,8 @@ class Dot {
 };
 
 bool cmp(Dot a, Dot b) {
+    if (a.dis == b.dis)
+        return a.num < b.num;
     return a.dis < b.dis;
 }
 
