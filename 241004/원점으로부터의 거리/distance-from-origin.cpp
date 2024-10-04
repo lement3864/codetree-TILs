@@ -43,7 +43,7 @@ int main() {
     sort(dots, dots + n, cmp);
 
     for (int i = 0; i < n; ++i) {
-        cout << dots[i].num << endl;
+        cout << dots[i].num << " dis크기" << dots[i].dis << endl;
     }
 
     return 0;
