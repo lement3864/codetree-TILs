@@ -18,7 +18,7 @@ class Number {
 
 bool compareNum (Number a, Number b) {
     if (a.num == b.num)
-        return a.idx > b.idx;
+        return a.idx < b.idx;
     return a.num < b.num;
 }
 
