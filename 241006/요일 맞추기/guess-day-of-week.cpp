@@ -47,7 +47,7 @@ int main() {
                 d1 = 1;
             }
 
-            if (day > 8) {
+            if (day > 7) {
                 day = 1;
             }
         }
