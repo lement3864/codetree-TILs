@@ -4,9 +4,9 @@ using namespace std;
 int main() {
     
     int n;
-    int pos = 10;
+    int pos = 50;
     int result = 0;
-    int arr[21] = {};
+    int arr[101] = {};
 
     cin >> n;
 
@@ -31,7 +31,7 @@ int main() {
         }
     }
 
-    for (int i = 0; i < 21; ++i) {
+    for (int i = 0; i < 101; ++i) {
         if (arr[i] >= 2)
             result++;
     }
