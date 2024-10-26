@@ -4,39 +4,40 @@ using namespace std;
 int main() {
     
     int n;
-    int pos = 500;
+    int pos = 1000;
     int result = 0;
-    int arr[1001] = {};
+    int arr[2001] = {};
 
     cin >> n;
 
     for (int k = 0; k < n; ++k) {
         int x;
-        int temp = pos;
         char dir;
 
         cin >> x >> dir;
 
+        int temp = pos;
+
         if (dir == 'R') {
-            for (int i = temp; i <= temp + x; ++i) {
+            for (int i = temp + 1; i <= temp + x; ++i) {
                 arr[i]++;
-                pos++;
             }
+            pos = temp + x;
         }
         else if (dir == 'L') {
-            for (int i = temp; i >= temp - x; --i) {
+            for (int i = temp - 1; i >= temp - x; --i) {
                 arr[i]++;
-                pos--;
             }
+            pos = temp - x;
         }
     }
 
-    for (int i = 0; i < 1001; ++i) {
-        if (arr[i] > 2)
+    for (int i = 0; i < 2001; ++i) {
+        if (arr[i] >= 2)
             result++;
     }
 
-    cout << result - 1;
+    cout << result;
 
     return 0;
 }
