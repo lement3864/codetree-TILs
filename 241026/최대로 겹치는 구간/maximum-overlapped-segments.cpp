@@ -17,7 +17,7 @@ int main() {
         }
     }
 
-    for (int i = 0; i <= 201; ++i) {
+    for (int i = 0; i < 201; ++i) {
         if (arr[i] >= result)
             result = arr[i];
     }
