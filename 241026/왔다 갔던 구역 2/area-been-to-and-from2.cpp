@@ -18,13 +18,13 @@ int main() {
         cin >> x >> dir;
 
         if (dir == 'R') {
-            for (int i = temp; i < temp + x; ++i) {
+            for (int i = temp; i <= temp + x; ++i) {
                 arr[i]++;
                 pos++;
             }
         }
         else if (dir == 'L') {
-            for (int i = temp; i > temp - x; --i) {
+            for (int i = temp; i >= temp - x; --i) {
                 arr[i]++;
                 pos--;
             }
