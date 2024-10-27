@@ -9,8 +9,8 @@ using namespace std;
 int main() {
     
     int n;
-    int x1[MAX_N], x2[MAX_N];
-    int checked[MAX_R + 1];
+    int x1[MAX_N] = {0}, x2[MAX_N] = {0};
+    int checked[MAX_R + 1] = {0};
     int cur = 0;
     int cnt = 0;
 
