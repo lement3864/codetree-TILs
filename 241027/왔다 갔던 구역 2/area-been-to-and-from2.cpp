@@ -1,43 +1,53 @@
 #include <iostream>
+
 using namespace std;
+
+#define MAX_N 100
+#define MAX_R 2000
+#define OFFSET 1000
 
 int main() {
     
     int n;
-    int pos = 1000;
-    int result = 0;
-    int arr[2001] = {};
+    int x1[MAX_N], x2[MAX_N];
+    int checked[MAX_R + 1];
+    int cur = 0;
+    int cnt = 0;
 
     cin >> n;
 
-    for (int k = 0; k < n; ++k) {
-        int x;
+    for (int i = 0; i < n; ++i) {
+        int dis;
         char dir;
+        cin >> dis >> dir;
 
-        cin >> x >> dir;
-
-        int temp = pos;
-
-        if (dir == 'R') {
-            for (int i = temp; i < temp + x; ++i) {
-                arr[i]++;
-            }
-            pos = temp + x;
+        if (dir == 'L') {
+            x1[i] = cur - dis;
+            x2[i] = cur;
+            cur -= dis;
         }
-        else if (dir == 'L') {
-            for (int i = temp; i > temp - x; --i) {
-                arr[i]++;
-            }
-            pos = temp - x;
+        else {
+            x1[i] = cur;
+            x2[i] = cur + dis;
+            cur += dis;
+        }
+
+        x1[i] += OFFSET;
+        x2[i] += OFFSET;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = x1[i]; j < x2[i]; ++j) {
+            checked[j]++;
         }
     }
 
-    for (int i = 0; i < 2001; ++i) {
-        if (arr[i] >= 2)
-            result++;
+    for (int i = 0; i <= MAX_R; ++i) {
+        if (checked[i] >= 2)
+            cnt++;
     }
 
-    cout << result;
+    cout << cnt;
 
     return 0;
 }
