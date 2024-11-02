@@ -7,19 +7,17 @@
 // using namespace std;
 
 // int n;
-// int x1[MAX_N];
-// int x2[MAX_N];
-// int checked[MAX_R + 1][2];
+// int checked[MAX_R + 1][2];  // 0 = 마지막으로 칠해진 색깔, 1 = 하얀색으로 칠해진 횟수, 2 = 검은색으로 칠해진 횟수
 
-// void check_W (int i) {
-//     for (int j = x1[i]; j < x2[i]; ++j) {
+// void check_W (int i, int start, int end) {
+//     for (int j = start; j < end; ++j) {
 //         checked[j][0] = 1;
 //         checked[j][1] += 1;
 //     }
 // }
 
-// void check_B (int i) {
-//     for (int j = x1[i]; j < x2[i]; ++j) {
+// void check_B (int i, int start, int end) {
+//     for (int j = start; j < end; ++j) {
 //         checked[j][0] = 2;
 //         checked[j][2] += 1;
 //     }
@@ -39,16 +37,16 @@
 //         cin >> distance >> direction;
 
 //         if (direction == 'L') {
-//             x1[i] = cur - distance + OFFSET;
-//             x2[i] = cur + OFFSET;
+//             int start = cur - distance + OFFSET;
+//             int end = cur + OFFSET;
 //             cur -= distance;
-//             check_W(i);
+//             check_W(i, start, end);
 //         }
 //         else {
-//             x1[i] = cur + OFFSET;
-//             x2[i] = cur + distance + OFFSET;
+//             int start = cur + OFFSET;
+//             int end = cur + distance + OFFSET;
 //             cur += distance;
-//             check_B(i);
+//             check_B(i, start, end);
 //         }
 //     }
 
@@ -64,7 +62,8 @@
 //             else if (checked[i][0] == 2) {
 //                 black++;
 //             }
-//         } 
+//         }
+        
 //     }
 
 //     cout << white << " " << black << " " << gray;
@@ -82,21 +81,19 @@
 using namespace std;
 
 int n;
-int white_count[MAX_R + 1] = {0}; // 흰색으로 칠해진 횟수
-int black_count[MAX_R + 1] = {0}; // 검은색으로 칠해진 횟수
-int last_color[MAX_R + 1] = {0}; // 0: 없음, 1: 흰색, 2: 검은색
+int checked[MAX_R + 1][2]; // [0]: 마지막으로 칠해진 색, [1]: 칠해진 횟수
 
 void check_W(int start, int end) {
     for (int i = start; i < end; ++i) {
-        white_count[i]++;
-        last_color[i] = 1; // 흰색으로 마지막 칠해짐
+        checked[i][0] = 1; // 마지막으로 흰색으로 칠해짐
+        checked[i][1]++;   // 칠해진 횟수 증가
     }
 }
 
 void check_B(int start, int end) {
     for (int i = start; i < end; ++i) {
-        black_count[i]++;
-        last_color[i] = 2; // 검은색으로 마지막 칠해짐
+        checked[i][0] = 2; // 마지막으로 검은색으로 칠해짐
+        checked[i][1]++;   // 칠해진 횟수 증가
     }
 }
 
@@ -127,11 +124,12 @@ int main() {
     }
 
     for (int i = 0; i <= MAX_R; ++i) {
-        if (white_count[i] >= 2 && black_count[i] >= 2) {
+        // 회색인 경우: 칠해진 횟수가 흰색과 검은색 각각 2번 이상인 경우
+        if (checked[i][1] >= 4) { // 최소 두 번씩 칠해진 경우 (흰색 2회, 검은색 2회)
             gray++;
-        } else if (last_color[i] == 1) {
+        } else if (checked[i][0] == 1) {
             white++;
-        } else if (last_color[i] == 2) {
+        } else if (checked[i][0] == 2) {
             black++;
         }
     }
