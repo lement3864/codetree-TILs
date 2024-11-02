@@ -81,7 +81,7 @@
 using namespace std;
 
 int n;
-int checked[MAX_R + 1][2]; // [0]: 마지막으로 칠해진 색, [1]: 칠해진 횟수
+int checked[MAX_R + 1][2]; // [0]: 마지막으로 칠해진 색 (1: 흰색, 2: 검은색), [1]: 칠해진 총 횟수
 
 void check_W(int start, int end) {
     for (int i = start; i < end; ++i) {
@@ -124,8 +124,8 @@ int main() {
     }
 
     for (int i = 0; i <= MAX_R; ++i) {
-        // 회색인 경우: 칠해진 횟수가 흰색과 검은색 각각 2번 이상인 경우
-        if (checked[i][1] >= 4) { // 최소 두 번씩 칠해진 경우 (흰색 2회, 검은색 2회)
+        // 회색인 경우: 최소 흰색과 검은색 각각 두 번 이상 칠해진 경우
+        if (checked[i][1] >= 4) { // 두 색 모두 두 번 이상 칠해진 경우 회색
             gray++;
         } else if (checked[i][0] == 1) {
             white++;
