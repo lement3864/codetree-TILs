@@ -1,9 +1,10 @@
 // 1. 첫번째 직사각형이 주어지면 1로 체크
 // 2. 두번째 직사각형이 주어지면 겹치는 부분만 2로 체크
-// 3. 1로 체크되어있는 부분에서 xMax와 yMax를 찾기
-// 4. 최소 넓이 = xMax * yMax 출력
+// 3. 1로 체크되어있는 부분에서 xMax, yMax, xMin, yMin 찾기
+// 4. 최소 넓이 = xMax - xMin * yMax - yMin 출력
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int result = 0;                             // 최소 직사각형 넓이
@@ -37,40 +38,31 @@ int main() {
     }
 
     int xMax = 0;
+    int xMin = 2001;
     int yMax = 0;
+    int yMin = 2001;
+    bool check_rect = false;
 
     // xMax 찾기
-    for (int i = 0; i < 2001; ++i) {
-        int temp = 0;
-
-        for (int j = 0; j < 2001; ++j) {
-            if (arr[i][j] == 1) {
-                temp++;        
+    for (int x = 0; x < 2001; ++x) {
+        for (int y = 0; y < 2001; ++y) {
+            if (arr[x][y] == 1) {
+                check_rect = true;
+                xMax = max(xMax, x);
+                xMin = min(xMin, x);
+                yMax = max(yMax, y);
+                yMin = min(yMin, y);
             }
-        }
-
-        if (xMax <= temp) {
-            xMax = temp;
         }
     }
 
-    // yMax 찾기
-    for (int j = 0; j < 2001; ++j) {
-        int temp = 0;
-
-        for (int i = 0; i < 2001; ++i) {
-            if (arr[i][j] == 1) {
-                temp++;        
-            }
-        }
-
-        if (yMax <= temp) {
-            yMax = temp;
-        }
-    }
 
     // 최소 직사각형 넓이
-    result = xMax * yMax;
+    if (!check_rect)
+        result = 0;
+    else
+        result = (xMax - xMin + 1) * (yMax - yMin + 1);
+
 
     // 출력
     cout << result;
