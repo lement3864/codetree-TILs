@@ -7,7 +7,7 @@ using namespace std;
 int N;                          // 주어지는 숫자 수
 int num[1001];                  // 숫자 배열
 int result = 0;                 // 결과 값
-int temp = 0;                   // 연속된 숫자 수 
+int temp = 1;                   // 연속된 숫자 수 
 
 int main() {
     
