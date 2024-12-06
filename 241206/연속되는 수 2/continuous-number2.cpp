@@ -33,6 +33,10 @@ int main() {
         }
     }
 
+    // 연속된 숫자 만 주어진 경우 예외 처리
+    if (result <= temp)
+        result = temp;
+
     // 결과 값 출력
     cout << result;
 
