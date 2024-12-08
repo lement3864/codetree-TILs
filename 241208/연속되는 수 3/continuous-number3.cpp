@@ -33,6 +33,11 @@ int main() {
         }
     }
 
+    // 연속된 수만 존재할 때 예외처리
+    if (result <= temp) {
+        result = temp;
+    }
+
     cout << result;
 
     return 0;
