@@ -33,6 +33,10 @@ int main() {
         }
     }
 
+    if (result <= cnt) 
+        result = cnt;
+    
+
     cout << result;
 
     return 0;
