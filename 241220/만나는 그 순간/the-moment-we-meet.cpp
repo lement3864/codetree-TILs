@@ -18,6 +18,8 @@ int main() {
     int move;
     int cur_a = 0;
     int cur_b = 0;
+    int idx_a = 0;
+    int idx_b = 0;
 
     char dir;
 
@@ -31,45 +33,50 @@ int main() {
         if (dir == 'R') {
             for (int j = 0; j < move; ++j) {
                 cur_a++;
-                arr_a[cur_a] = cur_a;
+                arr_a[idx_a] = cur_a;
+                idx_a++;
             }
         }
         else {
             for (int j = 0; j < move; ++j) {
                 cur_a--;
-                arr_a[cur_a] = cur_a;
+                arr_a[idx_a] = cur_a;
+                idx_a++;
             }
         }
     }
 
-    for (int i = 0; i < n; ++i) {
+    // B의 움직임 배열
+    for (int i = 0; i < m; ++i) {
        
         cin >> dir >> move;
 
         if (dir == 'R') {
             for (int j = 0; j < move; ++j) {
                 cur_b++;
-                arr_b[cur_b] = cur_b;
+                arr_b[idx_b] = cur_b;
+                idx_b++;
             }
         }
         else {
             for (int j = 0; j < move; ++j) {
                 cur_b--;
-                arr_b[cur_b] = cur_b;
+                arr_b[idx_b] = cur_b;
+                idx_b++;
             }
         }
 
     }
 
     // A, B 배열 비교
-    for (int i = 1; i < MAX_ARR; ++i) {
+    for (int i = 0; i < MAX_ARR; ++i) {
         if (arr_a[i] == arr_b[i]) {
             result = i;
             break;
         }
     }
 
-    cout << result;
+    cout << result + 1;
 
     return 0;
 }
