@@ -9,7 +9,7 @@
 using namespace std;
 
 int n, m;
-int result;
+int result = -1;
 int arr_a[MAX_ARR];
 int arr_b[MAX_ARR];
 
@@ -75,12 +75,12 @@ int main() {
     // A, B 배열 비교
     for (int i = 0; i < time; ++i) {
         if (arr_a[i] == arr_b[i]) {
-            result = i;
+            result = i + 1;
             break;
         }
     }
 
-    cout << result + 1;
+    cout << result;
 
     return 0;
 }
