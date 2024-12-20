@@ -21,6 +21,8 @@ int main() {
     int idx_a = 0;
     int idx_b = 0;
 
+    int time = 0;
+
     char dir;
 
     cin >> n >> m;
@@ -29,6 +31,8 @@ int main() {
     for (int i = 0; i < n; ++i) {
        
         cin >> dir >> move;
+
+        time += move;
 
         if (dir == 'R') {
             for (int j = 0; j < move; ++j) {
@@ -69,7 +73,7 @@ int main() {
     }
 
     // A, B 배열 비교
-    for (int i = 0; i < MAX_ARR; ++i) {
+    for (int i = 0; i < time; ++i) {
         if (arr_a[i] == arr_b[i]) {
             result = i;
             break;
