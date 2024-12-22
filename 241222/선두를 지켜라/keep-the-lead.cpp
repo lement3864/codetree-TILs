@@ -52,6 +52,7 @@ int main() {
         }
     }
 
+    // 입력 받은 배열 확인
     // for (int i = 0; i < idx_A; ++i) {
     //     cout << time_A[i] << " ";
     // }
@@ -67,7 +68,7 @@ int main() {
     bool big_B = false;                 // B가 앞설 때
 
     // 초기에 누가 선두인지 체크
-    if (time_A[0] > time_B[0]) {
+    if (time_A[0] >= time_B[0]) {
         big_A = true;
     }
     else if (time_B[0] > time_A[0]) {
