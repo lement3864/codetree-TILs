@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#define MAX_TIME 1000000
+#define MAX_TIME 1000001
 
 using namespace std;
 
