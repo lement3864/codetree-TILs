@@ -18,12 +18,12 @@ int dx[4] = {1, 0, -1, 0};
 
 // 이동하는 좌표가 배열 범위를 벗어나는지 체크하는 함수
 bool Checked(int x, int y) {
-    return (1 <= x && x <= n && 1 <= y && y <= n);
+    return (0 <= x && x <= n && 0 <= y && y <= n);
 }
 
 // 배열을 벗어나면 방향을 전환하는 함수
 int ChangeDir(int n) {
-    if (n ==3)
+    if (n == 3)
         return 1;
     else if (n == 1)
         return 3;
@@ -35,9 +35,10 @@ int ChangeDir(int n) {
 
 int main() {
     int dir;
-    
+
     cin >> n >> t;
     cin >> r >> c >> d;
+    
 
     // 초기 이동 방향
     if (d == 'L')
@@ -45,9 +46,9 @@ int main() {
     else if (d == 'R')
         dir = 1;
     else if (d == 'U')
-        dir = 0;
-    else
         dir = 2;
+    else
+        dir = 0;
 
     // 주어진 시간 동안 반복하며 초당 좌표위치 저장
     while (t--) {
@@ -63,6 +64,8 @@ int main() {
         else {
             dir = ChangeDir(dir);
         }
+
+        // cout << t << "초일때 현재 위치: " << r << " " << c << endl;
     }
 
     cout << r << " " << c;
