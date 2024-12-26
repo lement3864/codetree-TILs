@@ -13,27 +13,23 @@ int main() {
     cin >> n;
 
     for (int i = 0; i < n; ++i) {
-        char dir;
+        char dir_C;
         int move;
+        int dir;
 
-        cin >> dir >> move;
+        cin >> dir_C >> move;
 
-        if (dir == 'N') {
-            x += dx[3] * move;
-            y += dy[3] * move;
-        }
-        else if (dir == 'S') {
-            x += dx[1] * move;
-            y += dy[1] * move;
-        }
-        else if (dir == 'E') {
-            x += dx[0] * move;
-            y += dy[0] * move;
-        }
-        else{
-            x += dx[2] * move;
-            y += dy[2] * move;
-        }
+        if (dir_C == 'N')
+            dir = 3;
+        else if (dir_C == 'S') 
+            dir = 1;
+        else if (dir_C == 'E') 
+            dir = 0;
+        else
+            dir = 2;
+
+        x += dx[dir] * move;
+        y += dy[dir] * move;
     }
 
     cout << x << " " << y;
