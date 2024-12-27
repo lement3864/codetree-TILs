@@ -8,7 +8,7 @@ using namespace std;
 
 int n, m;
 
-int arr[100][100];
+int arr[101][101];
 
 int dx[4] = {-1, 0, 1 ,0};
 int dy[4] = {0, 1, 0, -1};
