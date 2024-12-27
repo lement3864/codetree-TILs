@@ -40,7 +40,10 @@ int main() {
             break;
     }
 
-    cout << t;
+    if (x == 0 && y == 0)
+        cout << t;
+    else
+        cout << -1;
 
     return 0;
 }
