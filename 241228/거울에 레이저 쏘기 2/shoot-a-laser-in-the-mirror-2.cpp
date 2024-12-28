@@ -59,7 +59,7 @@ void Slash() {
     if (dir == 0) {
         dir = 1;
         x = x + dx[dir];
-        y = y + dx[dir];
+        y = y + dy[dir];
     }
     else if (dir == 1) {
         dir = 0;
